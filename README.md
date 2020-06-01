@@ -1,2 +1,1 @@
-https://pacific-fjord-23452.herokuapp.com/
-https://git.heroku.com/pacific-fjord-23452.git
+Visit deployment at: https://signaling-server-bomb.herokuapp.com/
