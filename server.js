@@ -1,4 +1,5 @@
-const WebSocket = require( "ws" );
+const { Server } = require('ws')
+const express = require('express')
 const INDEX = 'index.html'
 
 const MAX_PEERS = 512;
