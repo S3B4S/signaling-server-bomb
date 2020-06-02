@@ -2,7 +2,6 @@ const { Server } = require('ws')
 const express = require('express')
 const INDEX = 'index.html'
 
-const wss = new Server({ server });
 const MAX_PEERS = 4096;
 const MAX_LOBBIES = 1024;
 const PORT = process.env.PORT || 3000;
@@ -47,6 +46,7 @@ function randomSecret () {
 const server = express()
   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
+const wss = new Server({ server });
 
 class ProtoError extends Error {
 	constructor (code, message) {
