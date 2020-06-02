@@ -1,5 +1,7 @@
 const { Server } = require('ws')
 const express = require('express')
+const crypto = require("crypto");
+
 const INDEX = 'index.html'
 
 const MAX_PEERS = 4096;
