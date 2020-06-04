@@ -97,7 +97,7 @@ class Lobby {
 		const close = assigned === 1;
 		this.peers.forEach((p) => {
 			// Room host disconnected, must close.
-			if (close) p.ws.close(4000, STR_HOST_DISCONNECTED);
+			if (close) p.ws.close(4100, STR_HOST_DISCONNECTED);
 			// Notify peer disconnect.
 			else p.ws.send(`D: ${assigned}\n`);
 		});
