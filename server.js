@@ -42,6 +42,8 @@ function randomSecret () {
 	for (let i = 0; i < 16; i++) {
 		out += ALFNUM[randomInt(0, ALFNUM.length - 1)];
 	}
+	if (lobbies.has(out))
+		return randomSecret
 	return out;
 }
 
