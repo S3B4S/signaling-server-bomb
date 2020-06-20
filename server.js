@@ -7,7 +7,7 @@ const INDEX = 'index.html'
 const MAX_PEERS = 4096;
 const MAX_LOBBIES = 1024;
 const PORT = process.env.PORT || 3000;
-const ALFNUM = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const ALFNUM = "0123456789";
 
 const NO_LOBBY_TIMEOUT = 1000;
 const SEAL_CLOSE_TIMEOUT = 10000;
