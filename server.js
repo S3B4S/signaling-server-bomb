@@ -39,7 +39,7 @@ function randomId () {
 
 function randomSecret () {
 	let out = "";
-	for (let i = 0; i < 4; i++) {
+	for (let i = 0; i < 6; i++) {
 		out += ALFNUM[randomInt(0, ALFNUM.length - 1)];
 	}
 	if (lobbies.has(out))
