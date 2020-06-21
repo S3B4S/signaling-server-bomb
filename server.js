@@ -28,6 +28,7 @@ const STR_INVALID_DEST = "Invalid destination";
 const STR_INVALID_CMD = "Invalid command";
 const STR_TOO_MANY_PEERS = "Too many peers connected";
 const STR_INVALID_TRANSFER_MODE = "Invalid transfer mode, must be text";
+const STR_LOBBY_FULL = "The lobby is already full";
 
 function randomInt (low, high) {
 	return Math.floor(Math.random() * (high - low + 1) + low);
@@ -151,7 +152,8 @@ function joinLobby (peer, pLobby) {
 	}
 	const lobby = lobbies.get(lobbyName);
 	if (!lobby) throw new ProtoError(4004, STR_LOBBY_DOES_NOT_EXISTS);
-	if (lobby.sealed) throw new ProtoError(4000, STR_LOBBY_IS_SEALED);
+	if (lobby.sealed) throw new ProtoError(4004, STR_LOBBY_IS_SEALED);
+	if (lobby.peers.length >= 6) throw new ProtoError(4444, STR_LOBBY_FULL)
 	peer.lobby = lobbyName;
 	console.log(`Peer ${peer.id} joining lobby ${lobbyName} ` +
 		`with ${lobby.peers.length} peers`);
